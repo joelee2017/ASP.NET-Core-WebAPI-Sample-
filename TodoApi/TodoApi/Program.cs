@@ -1,15 +1,15 @@
+// 建立 WebApplicationBuilder 物件
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
+// 透過 builder.Services 將服務加入 DI 容器
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// 建立 WebApplication 物件
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// 透過 app 設定 Middlewares (HTTP request pipeline)
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -17,9 +17,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
-
 app.MapControllers();
 
+// 啟動 ASP.NET Core 應用程式
 app.Run();
