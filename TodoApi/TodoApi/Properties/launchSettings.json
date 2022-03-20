@@ -14,7 +14,7 @@
       "dotnetRunMessages": true,
       "launchBrowser": true,
       //"launchUrl": "swagger",
-      "launchUrl": "api/todoitems",
+      "launchUrl": "api/todoitems", // 若要測試 使用 JavaScript 呼叫 Web API 需註解 launchUrl
       "applicationUrl": "https://localhost:7199;http://localhost:5199",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
